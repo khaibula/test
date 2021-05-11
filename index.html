@@ -8,21 +8,19 @@
   
 </head>
 <body>
-  <div id="some-id"></div>
-  <script type="text/javascript" src="https://bbookriver.ru/js/api/openapi.js"></script>
-  <script>
-    window.Bookriver?.Widgets.Books(
-          'some-id',
-          {
-            width: '1000',
-            booksInLine: 2,
-            bookInColumn: 3,
-            colorBackground: '#ffffff',
-            colorText: '#000000',
-            genre: 'fantastika',
-          },
-          '3jfas',
-          );
-  </script>
+  <script type="text/javascript" src="https://bbookriver.ru/js/api/openapi.js" ></script>
+      <div id="bookriver-books-widget"></div>
+        <script>
+          window.Bookriver.Widgets.Books(
+              'bookriver-books-widget',
+              {width: '100%',
+                booksInLine: 4,
+                isShowBookName: true,
+                bookInColumn: 1,
+                colorBackground: 'fff',
+                colorText: '000000',
+                genre: 'fantastika',},
+              '3jfas',)
+        </script>
 </body>
 </html>
