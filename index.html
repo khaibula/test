@@ -8,20 +8,29 @@
   
 </head>
 <body>
-  <script type="text/javascript" src="https://bookriver.ru/js/api/openapi.js" ></script>
+  <script async type="text/javascript" src="https://bookriver.ru/js/api/openapi.js" ></script>
       <div id="bookriver-books-widget"></div>
         <script>
-          window.Bookriver.Widgets.Books(
+          var init = () => {
+            window.Bookriver.Widgets.Books(
               'bookriver-books-widget',
               {genre: '',
                 isShowBookName: true,
-                isViewHoverEffect: true,
+                isViewHoverEffect: false,
                 colorText: '000000',
                 colorBackground: 'ffffff',
-                width: '700',
-                bookInColumn: 2,
-                booksInLine: 5},
-              'GQ2TSNY')
+                width: '100%',
+                bookInColumn: 1,
+                booksInLine: 4},
+              '')
+          }
+
+          if (typeof window.Bookriver !== 'undefined') {
+            init()
+          } else {
+            window.BookriverApiInitCallbacks = (window.BookriverApiInitCallbacks || []);
+            window.BookriverApiInitCallbacks.push(init);
+          }
         </script>
 </body>
 </html>
